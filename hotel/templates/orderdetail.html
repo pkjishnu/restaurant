@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin-bottom:100px;color:white;font-size:60px;">
+  <h1 style="color:red;font-size:100px;">Order Details..</h1>
+  Total:{{total}}<br>
+  Status:{{msg}}<br>
+  Quantity:{{items}}<br>
+  <p style="color:orange;font-size:30px;">Woohoo...<br>
+Thank you for Your order! We know you're going to love it...
+</p>
+</div>
+
+{% endblock %}

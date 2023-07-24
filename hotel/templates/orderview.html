@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+customer:{{name}}
+<table class="table table-bordered" style="background-color:black;">
+  <tr style="color:green;font-weight:bold;">
+    <th>Products </th>
+    <td>Name</td>
+    <td>Qty/Price</td>
+  <td>Address</td>
+  <td>Amount</td>
+    <td>Pickup_time</td>
+  <td>Order status</td>
+  </tr>
+  {% for i in o %}
+  <tr style="color:white"> <td><img src="{{i.products.img.url}}" style="height:150px;width:150px;"></td>
+
+    <td>{{i.products.name}}</td>
+    <td>{{i.noofitems}}<br>{{i.products.price}}</td>
+    <td>{{i.address}}</td>
+    <td>{{i.date_added}}<br>{{i.subtotal1}}<br>{{i.order_status}}</td>
+    <td>{{i.pickup_time}}</td>
+
+          <td style="color:red;">ph:{{i.phone}}<br>{{i.delivery_status}}</td>
+
+
+
+
+  </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

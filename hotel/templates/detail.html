@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{{p.img.url}}" style="height:280px;width:360px;" alt="{{p.img.url}}">
+        </div>
+        <div class="col-sm-10">
+            <div>
+                <h1 style="color:red">{{p.name}}  </h1>
+                <p style="font-weight:bold;color:white;font-size:2rem;">{{p.price}} </p>
+<a class="btn btn-primary" href="{% url 'cart:addtocart' p.id %}">addtocart</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-3 " id="ca![](../../../../AppData/Local/Temp/fried2.jpg)rds" style="margin-bottom:100px;justify-content: space-around;">
+  <div class="row mx-auto">
+{% for i in c %}
+
+    <div3 class="col-sm-3 mt-3">
+<div class="card" style="height:260px;width:180px;">
+  <img src="{{i.img.url}}" class="card-img-top" style="height:100px;width:100%;" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:18px;">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+    <a href="{% url 'resto:viewproducts' i.slug %}"  class="btn btn-primary">know more</a>
+  </div>
+</div>
+    </div3>
+{% endfor %}
+  </div>
+</div>
+{% endblock %}

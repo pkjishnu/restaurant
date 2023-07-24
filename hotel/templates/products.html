@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-3 " id="cards" style="margin-bottom:100px;justify-content: space-around;">
+  <div class="row mx-auto">
+    {% for i in p %}
+    <div class="col-sm-3">
+      <div class="card" style="height:300px;width:180px;">
+        <img src="{{i.img.url}}" class="card-img-top" style="height:100px;width:100%;" alt="Card image cap">
+        <div class="card-body" style="justify-content: space-between;" >
+          <h5 class="card-title" style="font-size:16px;">{{i.name}}</h5>
+          <p class="card-text">{{i.desc}}<br>{{i.price}}</p>
+          <a href="{% url 'resto:prodetail' i.slug %}" class="btn btn-primary" >Order</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}

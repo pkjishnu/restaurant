@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style="margin-left:200px;">
+<h1 style="font-weight:bold;color:orange;">Login</h1>
+<form method="post" style="width:300px;font-size:20px;color:black;">
+  {% csrf_token %}
+<div class="mb-3">
+  <label class="form-label">Username</label>
+  <input type="text" class="form-control" name="u" placeholder="enter a number">
+</div>
+
+
+   <div class="mb-3" >
+  <label class="form-label">Password</label>
+  <input type="password" class="form-control" name="p" placeholder="Enter Password">
+</div>
+
+
+      <div class="col-auto" >
+         <button class="btn btn-outline-success my-2 my-sm-0" style="font-weight:bold;" type="submit">Login</button>
+          <a href="{% url 'resto:register' %}" class="btn btn-outline-success my-2 my-sm-0">Sign Up</a>
+      </div>
+
+
+</form>
+{% if messages %}
+{% for i in messages %}
+<ul class="messages">
+    <li>{{i}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}
